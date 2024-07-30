@@ -1,12 +1,14 @@
 def main():
     filename = 'text.txt'
-    val = readFile(filename)
-    print(val)
+    line = readFile(filename)
+    char = [char for char in line.strip() if char.isdigit()]
+    print(char)
+    
 
 def readFile(fn):
     with open(fn, 'r') as file:
-        content = file.read().split()
-    return content
+        lines = file.read().splitlines()
+    return lines
 
 if __name__ == "__main__":
 	main()
